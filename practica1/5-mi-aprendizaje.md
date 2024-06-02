@@ -1,3 +1,6 @@
-# COMPLETAR  
-Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
-Si solucionó un problema presentado al realizar la práctica también se debe documentar.
+# Mi aprendizaje de la practica 1
+Los aprendizajes que he obtenido con relación al a practica los puedo agrupar de la siguiente manera: 
+1. Docker es una plataforma que permite crear, desplegar y ejecutar contenedores, los cuales son entornos ligeros y portables. 
+2. Las imágenes de Docker son plantillas utilizadas para crear contenedores. Para manejar imágenes, se pueden usar varios comandos: ``docker pull <nombre_imagen>:<tag>``, para descargar una imagen con su nombre y version; ``docker images`` para listar las imágenes existentes y ``docker rmi <nombre_imagen>`` para eliminar una imagen. 
+3. En cuanto a los contenedores, se pueden crear con ``docker run -d --name nombre_contenedor nombre_imagen``, listar con ``docker ps -a``, detener la ejecución del contenedor ``docker stop nombre_contenedor`` y eliminar con ``docker rm nombre_contenedor`` (o ``docker rm -f nombre_contenedor`` si el contenedor está en ejecución). 
+4. Por otro lado, el mapeo de puertos es esencial para acceder a los servicios dentro de los contenedores; esto se logra con el comando ``docker run -d -p puerto_host:puerto_contenedor nombre_imagen``, que asigna un puerto específico de la máquina anfitriona al puerto correspondiente en el contenedor. Estos comandos y conceptos permiten gestionar eficientemente mis aplicaciones dentro de entornos aislados usando Docker.
