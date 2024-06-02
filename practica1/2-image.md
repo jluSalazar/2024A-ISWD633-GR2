@@ -7,7 +7,10 @@ Es un archivo único que contiene todos los programas, librerías, dependencias 
 
 
 ## ¿Cuál es la relación entre una imagen y un contenedor? 
-# COMPLETAR 
+Dentro del campo de docker se puede extraer estas definiciones de una Imagen y un Contenedor:
+
+- **Imagen:** Es una plantilla que define todo lo necesario para ejecutar una aplicación, incluyendo el sistema operativo, las bibliotecas, las dependencias y la aplicación misma.
+- **Contenedor:** Es una instancia en ejecución de una imagen Docker. Cuando una imagen se ejecuta, crea un contenedor, que es una instancia con su propio sistema de archivos, red y espacio de procesos.
 
 ![Imagen y contenedores](imagenes/imagenYcontenedores.JPG)
 ## Comandos para imágenes
@@ -26,24 +29,34 @@ Una imagen puede tener la etiqueta latest para representar la última versión, 
 docker pull <nombre imagen>:<tag>
 ```
 
-Descargar la imagen **hello-world**
-# COMPLETAR
+#### Descargar la imagen **hello-world**
+Para descargar la ultima version de la imagen **hello-world** se usa el siguiente comando
+```
+docker pull hello-world
+```
 
-**¿Qué es nginx**
-# COMPLETAR 
+#### **¿Qué es nginx?**
 
-Descargar la imagen  **nginx** en la versión **alpine**
-# COMPLETAR
+Nginx, pronunciado como “engine-ex”, es un servidor web de código abierto que, desde su éxito inicial como servidor web, ahora también es usado como proxy inverso, cache de HTTP, y balanceador de carga.
+
+Diseñado para manejar solicitudes HTTP y HTTPS, Nginx es un servidor web y proxy inverso de código abierto eficiente y utilizado en Internet que se destaca por su capacidad para servir contenido web de manera rápida y eficiente, así que puede funcionar como servidor web principal o como intermediario entre los clientes y los servidores de aplicación.
+
+#### Descargar la imagen  **nginx** en la versión **alpine**
+
+Para descargar la version alpine de la imagen nginx se debe ejecutar el siguiente comando
+
+```
+docker pull nginx:alpine
+```
 
 ### Listar imágenes
 
 ```
 docker images
 ```
+![Ejecucion de docker imagenes](imagenes/docker_images_command.png)
 
-# COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
-
-**Identificadores**
+**Identificadores:**
 En Docker, se utilizan varios identificadores para diferenciar de manera única los elementos del sistema, como imágenes, contenedores, volúmenes y redes. Estos identificadores son generados automáticamente por Docker y son únicos dentro del contexto del sistema Docker en el que se encuentran. 
 
 ### Inspeccionar una imagen
@@ -54,11 +67,15 @@ docker inspect <nombre imagen>
 docker inspect <nombre imagen>:<tag>
 ```
 
-Inspeccionar la imagen hello-world 
-# COMPLETAR
+#### Inspeccionar la imagen hello-world
+Para inspeccionar la imagen **hello-world** se ejecuta el siguiente comando: 
+```
+docker inspect hello-world
+```
 
-**¿Con qué algoritmo se está generando el ID de la imagen**
-# COMPLETAR
+**¿Con qué algoritmo se está generando el ID de la imagen:**
+La imagen se está generando con el algoritmo **SHA-256**.
+SHA-256 (Secure Hash Algorithm 256-bit) es una función hash criptográfica que produce un hash de 256 bits (64 caracteres en formato hexadecimal). Es ampliamente utilizada por su seguridad y eficiencia.
 
 ### Filtrar imágenes
 
@@ -67,15 +84,18 @@ docker images | grep <termino a buscar>
 
 ```
 
-### Para eliminar una imagen
+### Eliminar una imagen
 Eliminar permanentemente la imagen de tu sistema Docker.
 
 ```
 docker rmi <nombre imagen>:<tag>
 ```
 
-Eliminar la imagen hello-world 
-# COMPLETAR
+#### Eliminar la imagen hello-world 
+Para eliminar la imagen hello-world se usa el siguiente commando
+```
+docker rmi hwllo-world
+```
 
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
 Cuando eliminas una imagen Docker, Docker no elimina automáticamente los contenedores que se han creado a partir de esa imagen. Esto significa que, aunque hayas eliminado la imagen, el contenedor seguirá ejecutándose normalmente.  
